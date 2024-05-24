@@ -27,3 +27,10 @@ service:
   feature-toggle:
     api:
       url: http://localhost:8080
+
+feign:
+  okhttp:
+    cache:
+      enabled: true
+      directory: /tmp/feign
+      maxSize: 10485760

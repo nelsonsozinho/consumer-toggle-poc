@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: local
+  application:
+    name: consume-toggle
+  mvc:
+    path_match:
+      matching-strategy: ant_path_matcher
+  servlet:
+    multipart:
+      max-file-size: 500KB
+      max-request-size: 500KB
+
+server:
+  port: 8181
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: never
+    include-exception: false
+  servlet:
+    context-path: /api
+    session:
+      timeout: 20s
+
+service:
+  feature-toggle:
+    api:
+      url: http://localhost:8080

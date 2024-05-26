@@ -21,6 +21,8 @@ public interface FeatureToggleClient {
     @Cacheable(cacheNames = "application-features", key = "#featureId")
     ResponseEntity<List<FeatureResponse>> getFeatureToggle(
             @RequestHeader(value = Constants.HEADER_AUTHORIZATION) final String authorization,
+            @RequestHeader(value = "Accept-Encoding") final String acceptEncoding,
+            @RequestHeader(value = "Cache-Control") final Boolean isCacheControl,
             @PathVariable("featureId") String featureId
     );
 

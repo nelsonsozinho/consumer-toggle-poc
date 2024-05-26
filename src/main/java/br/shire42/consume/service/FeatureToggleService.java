@@ -18,7 +18,7 @@ public class FeatureToggleService {
 
     public List<FeatureResponse> listFeatureToggleByApplication(final FeatureToggleRequest request) {
         log.info("New request to get the features from {}", request.getApplicationId());
-        var response = client.getFeatureToggle(request.getAuthorized(), request.getApplicationId());
+        var response = client.getFeatureToggle(request.getAuthorized()  , "gzip", request.getIsCacheControl(), request.getApplicationId());
         return response.getBody();
     }
 

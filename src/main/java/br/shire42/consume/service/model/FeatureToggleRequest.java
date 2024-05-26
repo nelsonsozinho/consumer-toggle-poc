@@ -9,5 +9,6 @@ public class FeatureToggleRequest {
 
     private String applicationId;
     private String authorized;
+    private Boolean isCacheControl;
 
 }

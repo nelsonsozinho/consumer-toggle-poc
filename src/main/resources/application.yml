@@ -10,6 +10,14 @@ spring:
     multipart:
       max-file-size: 500KB
       max-request-size: 500KB
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 5000
+            readTimeout: 5000
+            loggerLevel: full
 
 server:
   port: 8181
@@ -34,3 +42,11 @@ feign:
       enabled: true
       directory: /tmp/feign
       maxSize: 10485760
+
+
+#logging:
+#  level:
+#    br:
+#      shire42:
+#        consume:
+#          cliente: DEBUG

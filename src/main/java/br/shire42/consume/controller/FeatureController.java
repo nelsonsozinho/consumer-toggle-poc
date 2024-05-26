@@ -26,6 +26,7 @@ public class FeatureController {
         FeatureToggleRequest request = FeatureToggleRequest.builder()
                 .applicationId(applicationId)
                 .authorized(authorization)
+                .isCacheControl(true)
                 .build();
 
         return ResponseEntity.ok(service.listFeatureToggleByApplication(request));

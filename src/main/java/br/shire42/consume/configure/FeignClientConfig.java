@@ -8,11 +8,13 @@ import lombok.extern.slf4j.Slf4j;
 import okhttp3.Cache;
 import okhttp3.ConnectionPool;
 import okhttp3.OkHttpClient;
+import okhttp3.Protocol;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.io.File;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @Configuration
@@ -34,6 +36,8 @@ public class FeignClientConfig {
     @Bean
     public Client buildFeignClient(MultipartConfigElement multipartConfigElement) {
         final OkHttpClient.Builder builder = new OkHttpClient.Builder();
+
+        builder.protocols(List.of(Protocol.H2_PRIOR_KNOWLEDGE));
 
         if(cacheEnabled) {
             log.info("Feign cache enabled");

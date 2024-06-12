@@ -1,7 +1,6 @@
 package br.shire42.consume.controller;
 
 import br.shire42.consume.cliente.response.FeatureResponse;
-import br.shire42.consume.cliente.response.ToggleResponse;
 import br.shire42.consume.service.FeatureToggleService;
 import br.shire42.consume.service.model.FeatureToggleRequest;
 import lombok.RequiredArgsConstructor;
